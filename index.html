@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sangram Deshmukh | Data Analyst & AI/ML Enthusiast</title>
+    <meta name="description"
+        content="Portfolio of Sangram Deshmukh, Data Analyst & AI/ML Enthusiast with hands-on experience in data analysis, data visualization, and predictive modelling.">
+    <meta name="keywords"
+        content="Data Analyst, AI/ML Enthusiast, Power BI, Tableau, Python, SQL, Excel, LangChain, RAG Pipelines">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sangram Deshmukh | Data Analyst & AI/ML Enthusiast">
+    <meta property="og:description"
+        content="Portfolio of Sangram Deshmukh, Data Analyst & AI/ML Enthusiast with hands-on experience in data analysis, data visualization, and predictive modelling.">
+    <meta property="og:image" content="assets/ai_avatar.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Sangram Deshmukh | Data Analyst & AI/ML Enthusiast">
+    <meta property="twitter:description"
+        content="Portfolio of Sangram Deshmukh, Data Analyst & AI/ML Enthusiast with hands-on experience in data analysis, data visualization, and predictive modelling.">
+    <meta property="twitter:image" content="assets/ai_avatar.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dark-mode">
+    <!-- Background Elements -->
+    <div class="blob-glow blob-1" id="blob-1"></div>
+    <div class="blob-glow blob-2" id="blob-2"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation Header -->
+    <header id="main-header">
+        <div class="header-container">
+            <a href="#hero" class="logo" id="logo-id">Sangram Deshmukh<span class="highlight"> Portfolio</span></a>
+            <nav class="nav-menu" id="nav-menu-id">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+                <button id="mobile-menu-btn" class="icon-btn mobile-menu-btn" aria-label="Open Menu">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                    <i data-lucide="x" class="close-icon hidden"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="section-container hero-container">
+                <div class="hero-content scroll-reveal fade-left">
+                    <div class="badge">
+                        <span class="pulse-dot"></span> Open for Opportunities
+                    </div>
+                    <h1>Hi, I'm <span class="gradient-text">Sangram Deshmukh</span></h1>
+                    <h2>I am a <span id="typed-text" class="highlight"></span><span class="cursor">|</span></h2>
+                    <p class="hero-desc">
+                        Entry-level Data Analyst with hands-on experience in data analysis, data visualization, and
+                        predictive modelling across real-world datasets. Skilled in Python, SQL, Power BI, and Tableau
+                        with a proven ability to translate complex data into actionable insights.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/sangram-deshmukh-530b512aa" target="_blank" rel="noopener"
+                            aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect width="4" height="12" x="2" y="9"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg></a>
+                        <a href="https://www.github.com/sangram654" target="_blank" rel="noopener"
+                            aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github">
+                                <path
+                                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                                </path>
+                                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                            </svg></a>
+                        <a href="mailto:sangramdeshmukh2004@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+                        <a href="tel:+919270836897" aria-label="Phone"><i data-lucide="phone"></i></a>
+                    </div>
+                </div>
+                <div class="hero-visual scroll-reveal fade-right">
+                    <div class="avatar-glow-wrapper">
+                        <img src="assets/sangram.jpg" alt="Sangram Deshmukh" class="avatar-image" width="400"
+                            height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Stats Section -->
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <div class="section-header scroll-reveal">
+                    <span class="sub-heading">Introduction</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-underline"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text scroll-reveal fade-left">
+                        <p>
+                            I'm an entry-level Data Analyst and AI/ML Enthusiast. I believe in the power of data
+                            storytelling to solve complex business problems. With hands-on experience in cleansing data,
+                            performing Exploratory Data Analysis (EDA), building interactive dashboards, and training
+                            predictive models, I focus on turning raw data into strategic insights.
+                        </p>
+                        <p>
+                            Completed my B.E in AI & ML at Samarth College of Engineering & Management, I bridge the gap
+                            between traditional data analytics and modern machine learning techniques. From setting up
+                            automated ETL pipelines to training forecasting models and configuring AI workflows
+                            (LangChain, LangGraph), I enjoy building end-to-end data products.
+                        </p>
+                    </div>
+                    <div class="about-stats scroll-reveal fade-right">
+                        <div class="stat-card">
+                            <div class="stat-num">8.64</div>
+                            <div class="stat-label">B.E. CGPA (AI & ML)</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">4+</div>
+                            <div class="stat-label">Featured Analytics Projects</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">~1</div>
+                            <div class="stat-label">Year of Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">#1</div>
+                            <div class="stat-label">Department Topper</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="section-container">
+                <div class="section-header scroll-reveal">
+                    <span class="sub-heading">Expertise</span>
+                    <h2 class="section-title">Skills & Tech Stack</h2>
+                    <div class="section-underline"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Skills Category 1 -->
+                    <div class="skills-card scroll-reveal">
+                        <div class="skills-card-header">
+                            <i data-lucide="bar-chart-3" class="skills-icon"></i>
+                            <h3>Data Analytics & Visualization</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li>Microsoft Power BI</li>
+                            <li>Tableau</li>
+                            <li>Excel & Advanced Excel</li>
+                            <li>Exploratory Data Analysis (EDA)</li>
+                            <li>Statistical Analysis</li>
+                            <li>Matplotlib & Seaborn</li>
+                            <li>Data Cleaning & Cleansing</li>
+                        </ul>
+                    </div>
+
+                    <!-- Skills Category 2 -->
+                    <div class="skills-card scroll-reveal">
+                        <div class="skills-card-header">
+                            <i data-lucide="brain-circuit" class="skills-icon"></i>
+                            <h3>ML & AI</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li>Scikit-learn & XGBoost</li>
+                            <li>TensorFlow & PyTorch</li>
+                            <li>LangChain & LangGraph</li>
+                            <li>RAG Pipelines & LLM APIs</li>
+                            <li>Time Series Analysis</li>
+                            <li>Predictive Modelling</li>
+                            <li>Computer Vision (OpenCV)</li>
+                            <li>Vector Databases</li>
+                        </ul>
+                    </div>
+
+                    <!-- Skills Category 3 -->
+                    <div class="skills-card scroll-reveal">
+                        <div class="skills-card-header">
+                            <i data-lucide="code-2" class="skills-icon"></i>
+                            <h3>Programming Languages</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li>Python</li>
+                            <li>SQL (MySQL, PostgreSQL)</li>
+                            <li>R</li>
+                            <li>JavaScript</li>
+                            <li>C++</li>
+                            <li>Data Structures & Algorithms</li>
+                            <li>Object-Oriented Programming</li>
+                            <li>System Design</li>
+                        </ul>
+                    </div>
+
+                    <!-- Skills Category 4 -->
+                    <div class="skills-card scroll-reveal">
+                        <div class="skills-card-header">
+                            <i data-lucide="database" class="skills-icon"></i>
+                            <h3>Data Engineering & Tools</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li>ETL Pipelines</li>
+                            <li>FastAPI & Streamlit</li>
+                            <li>AWS, Docker</li>
+                            <li>MySQL, MongoDB</li>
+                            <li>Django & Flask</li>
+                            <li>n8n & Zapier</li>
+                            <li>Git & GitHub</li>
+                            <li>Jupyter Notebook</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience-section">
+            <div class="section-container">
+                <div class="section-header scroll-reveal">
+                    <span class="sub-heading">Professional Journey</span>
+                    <h2 class="section-title">Work Experience</h2>
+                    <div class="section-underline"></div>
+                </div>
+
+                <div class="timeline">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item left scroll-reveal">
+                        <div class="timeline-date">July 2025 - April 2026</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Data Science Intern</h3>
+                                <span class="company-badge">AI Variant (Remote)</span>
+                            </div>
+                            <ul class="exp-details">
+                                <li><strong>Data Analysis & EDA:</strong> Performed Exploratory Data Analysis (EDA) on
+                                    500K+ row datasets using Pandas and NumPy, identifying trends and business patterns
+                                    that directly influenced product pricing and strategic decisions.</li>
+                                <li><strong>Dashboard & Reporting:</strong> Built interactive Power BI KPI dashboards
+                                    and automated ETL pipelines in Python and SQL, delivering structured weekly reports
+                                    to senior leadership.</li>
+                                <li><strong>Forecasting & ML:</strong> Deployed Time Series Forecasting models on
+                                    SQL-backed datasets for enterprise demand prediction, incorporating advanced feature
+                                    engineering and rigorous model evaluation.</li>
+                                <li><strong>AI & GenAI:</strong> Engineered autonomous AI agents and GenAI prototypes on
+                                    AWS, reducing hallucination rates and improving LLM response accuracy for business
+                                    workflows.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item right scroll-reveal">
+                        <div class="timeline-date">Dec 2024 - Feb 2025</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Data Science Intern</h3>
+                                <span class="company-badge">Sumago Infotech Pvt Ltd (Onsite)</span>
+                            </div>
+                            <ul class="exp-details">
+                                <li><strong>Predictive Modelling:</strong> Built regression-based predictive models with
+                                    complete end-to-end data preprocessing, feature engineering, and performance
+                                    evaluation on real-time datasets.</li>
+                                <li>Collaborated with team members onsite to integrate data pipelines and analytics
+                                    structures.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="section-container">
+                <div class="section-header scroll-reveal">
+                    <span class="sub-heading">Portfolio Showcases</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="section-underline"></div>
+                </div>
+
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="aiml">AI & Machine Learning</button>
+                    <button class="filter-btn" data-filter="analytics">Data Analytics & BI</button>
+                </div>
+
+                <div class="projects-grid scroll-reveal" id="projects-grid-id">
+                    <!-- Project 1 (AI/ML) -->
+                    <div class="project-card" data-category="aiml">
+                        <div class="project-image-wrapper">
+                            <img src="assets/project_rag.png" alt="RAG-Based Document Intelligence" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>RAG-Based Document Intelligence</h3>
+                            <p>Built a production-grade Retrieval-Augmented Generation pipeline with semantic chunking,
+                                hybrid search, and re-ranking; achieved 87% answer relevance on benchmarks. Deployed as
+                                streaming REST API.</p>
+                            <div class="tech-tags">
+                                <span>Python</span>
+                                <span>LangChain</span>
+                                <span>FAISS</span>
+                                <span>FastAPI</span>
+                                <span>OpenAI API</span>
+                                <span>Docker</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 (AI/ML) -->
+                    <div class="project-card" data-category="aiml">
+                        <div class="project-image-wrapper">
+                            <img src="assets/project_automation.png" alt="Intelligent Workflow Automation"
+                                loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>Intelligent Workflow Automation & Demand Forecasting</h3>
+                            <p>API-driven agentic automation pipeline reducing manual processing by 20+ hrs/month.
+                                Integrated LLM-based structured output generation with ARIMA forecasting for enterprise
+                                demand prediction.</p>
+                            <div class="tech-tags">
+                                <span>Python</span>
+                                <span>LangChain</span>
+                                <span>Statsmodels</span>
+                                <span>Scikit-learn</span>
+                                <span>FastAPI</span>
+                                <span>Zapier</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 (AI/ML) -->
+                    <div class="project-card" data-category="aiml">
+                        <div class="project-image-wrapper">
+                            <img src="assets/project_analytics.png" alt="Real-Time Predictive Analytics" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>Real-Time Predictive Analytics & Anomaly Detection</h3>
+                            <p>End-to-end ML pipeline ingesting live event streams. Trained XGBoost and LSTM models for
+                                multivariate time-series forecasting with automated anomaly alerts, reducing false
+                                positives by 35%.</p>
+                            <div class="tech-tags">
+                                <span>Python</span>
+                                <span>XGBoost</span>
+                                <span>TensorFlow</span>
+                                <span>Kafka</span>
+                                <span>Streamlit</span>
+                                <span>AWS EC2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 (AI/ML) -->
+                    <div class="project-card" data-category="aiml">
+                        <div class="project-image-wrapper">
+                            <img src="assets/project_erp.png" alt="AI-Powered College ERP" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>AI-Powered ERP (College System)</h3>
+                            <p>Full-stack ERP system with AI-native facial attendance verification via face-api.js, IoT
+                                (ESP32) microcontroller integration, Role-Based Access Control (RBAC), and secure cloud
+                                database management.</p>
+                            <div class="tech-tags">
+                                <span>MERN Stack</span>
+                                <span>face-api.js</span>
+                                <span>ESP32</span>
+                                <span>C++</span>
+                                <span>JWT</span>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 (Analytics) -->
+                    <div class="project-card" data-category="analytics">
+                        <div class="project-image-wrapper">
+                            <img src="assets/project_analytics.png" alt="Real-Time Sales Analytics Dashboard"
+                                loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>Real-Time Sales Analytics Dashboard</h3>
+                            <p>Created an end-to-end data pipeline with an interactive Power BI and Streamlit dashboard
+                                featuring live KPI tracking and trend analysis, successfully reducing manual reporting
+                                time by 40%.</p>
+                            <div class="tech-tags">
+                                <span>Python</span>
+                                <span>SQL</span>
+                                <span>Power BI</span>
+                                <span>Streamlit</span>
+                                <span>Matplotlib</span>
+                                <span>AWS EC2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 (Analytics) -->
+                    <div class="project-card" data-category="analytics">
+                        <div class="project-image-wrapper">
+                            <img src="assets/project_segmentation.png" alt="Customer Segmentation & Churn Analysis"
+                                loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>Customer Segmentation & Churn Analysis</h3>
+                            <p>Performed EDA and RFM (Recency, Frequency, Monetary) analysis on 200K+ customer records.
+                                Applied K-Means clustering and built a churn prediction model with 82% accuracy to guide
+                                retention strategy.</p>
+                            <div class="tech-tags">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>Scikit-learn</span>
+                                <span>Seaborn</span>
+                                <span>Tableau</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 7 (Analytics) -->
+                    <div class="project-card" data-category="analytics">
+                        <div class="project-image-wrapper">
+                            <img src="assets/project_automation.png" alt="Demand Forecasting & Automated Reporting"
+                                loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>Demand Forecasting & Automated Reporting</h3>
+                            <p>Automated an ETL pipeline for raw sales data transformation. Applied ARIMA and XGBoost
+                                for time-series demand forecasting, delivering weekly structured Excel and PDF reports
+                                to stakeholders.</p>
+                            <div class="tech-tags">
+                                <span>Python</span>
+                                <span>Statsmodels</span>
+                                <span>XGBoost</span>
+                                <span>SQL</span>
+                                <span>Pandas</span>
+                                <span>Excel</span>
+                                <span>Zapier</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 8 (Analytics) -->
+                    <div class="project-card" data-category="analytics">
+                        <div class="project-image-wrapper">
+                            <img src="assets/project_hr_analytics.png" alt="HR Attrition Analytics" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>HR Attrition Analytics</h3>
+                            <p>Conducted end-to-end analysis of HR datasets using statistical hypothesis testing and A/B
+                                testing. Built a Tableau dashboard visualizing attrition drivers across departments,
+                                reducing reporting effort by 30%.</p>
+                            <div class="tech-tags">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>NumPy</span>
+                                <span>Seaborn</span>
+                                <span>Tableau</span>
+                                <span>Excel</span>
+                                <span>Statistics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Achievements Section -->
+        <section id="education" class="education-section">
+            <div class="section-container">
+                <div class="edu-achieve-grid">
+                    <!-- Education Column -->
+                    <div class="edu-column scroll-reveal">
+                        <div class="section-header">
+                            <span class="sub-heading">Academic Profile</span>
+                            <h2 class="section-title">Education</h2>
+                            <div class="section-underline"></div>
+                        </div>
+
+                        <div class="edu-timeline">
+                            <div class="edu-card">
+                                <span class="edu-year">2022 - 2026</span>
+                                <h4>B.E. – Artificial Intelligence & Machine Learning</h4>
+                                <p class="edu-school">Samarth College of Engineering & Management, Belhe, Pune</p>
+                                <div class="edu-detail">CGPA: <strong>8.64</strong></div>
+                            </div>
+
+                            <div class="edu-card">
+                                <span class="edu-year">2021 - 2022</span>
+                                <h4>HSC (12th Grade)</h4>
+                                <p class="edu-school">Dada Patil Mahavidyalaya, Karjat</p>
+                                <div class="edu-detail">Percentage: <strong>65%</strong></div>
+                            </div>
+
+                            <div class="edu-card">
+                                <span class="edu-year">2019 - 2020</span>
+                                <h4>SSC (10th Grade)</h4>
+                                <p class="edu-school">Mahatma Gandhi Vidyalaya, Karjat</p>
+                                <div class="edu-detail">Percentage: <strong>88%</strong></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievements & Hobbies Column -->
+                    <div class="achieve-column scroll-reveal">
+                        <div class="section-header">
+                            <span class="sub-heading">Recognitions & More</span>
+                            <h2 class="section-title">Honors & Hobbies</h2>
+                            <div class="section-underline"></div>
+                        </div>
+
+                        <!-- Awards List -->
+                        <div class="awards-wrapper">
+                            <h3>Awards & Achievements</h3>
+                            <div class="award-card">
+                                <i data-lucide="trophy" class="award-icon"></i>
+                                <div>
+                                    <h5>Academic Topper – AI & ML Dept.</h5>
+                                    <p>Ranked #1 topper student in AI & ML Department during academic year 2024–25
+                                        (Third Year).</p>
+                                </div>
+                            </div>
+                            <div class="award-card">
+                                <i data-lucide="award" class="award-icon"></i>
+                                <div>
+                                    <h5>1st Prize – GK Competition</h5>
+                                    <p>Secured First Place in inter-campus General Knowledge Competition during campus
+                                        annual competition.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certifications List -->
+                        <div class="certifications-wrapper">
+                            <h3>Certifications</h3>
+                            <ul class="cert-list">
+                                <li>
+                                    <i data-lucide="badge-check"></i>
+                                    <span>Analyzing and Visualizing Data with Microsoft Power BI (Udemy)</span>
+                                </li>
+                                <li>
+                                    <i data-lucide="badge-check"></i>
+                                    <span>Flipkart Grid 6.0 - Ecommerce & Tech Quiz Hackathon (Unstop)</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Hobbies Section -->
+                        <div class="hobbies-wrapper">
+                            <h3>Hobbies & Interests</h3>
+                            <div class="hobbies-tags">
+                                <span class="hobby-tag"><i data-lucide="swords"></i> Chess (Strategy & Focus)</span>
+                                <span class="hobby-tag"><i data-lucide="music"></i> Music (Relax & Recharge)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="section-container">
+                <div class="section-header scroll-reveal">
+                    <span class="sub-heading">Get in Touch</span>
+                    <h2 class="section-title">Contact Me</h2>
+                    <div class="section-underline"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-panel scroll-reveal fade-left">
+                        <h3>Let's talk about data!</h3>
+                        <p>Feel free to reach out for data analysis roles, analytics consulting, internship
+                            opportunities, or to discuss interesting data science and machine learning topics.</p>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-linkedin">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect width="4" height="12" x="2" y="9"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg></div>
+                                <div>
+                                    <h4>LinkedIn</h4>
+                                    <p><a href="https://www.linkedin.com/in/sangram-deshmukh-530b512aa" target="_blank"
+                                            rel="noopener">https://www.linkedin.com/in/sangram-deshmukh-530b512aa</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-github">
+                                        <path
+                                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                                        </path>
+                                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                                    </svg></div>
+                                <div>
+                                    <h4>GitHub</h4>
+                                    <p><a href="https://www.github.com/sangram654" target="_blank"
+                                            rel="noopener">https://www.github.com/sangram654</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon-wrapper"><i data-lucide="mail"></i></div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:sangramdeshmukh2004@gmail.com">sangramdeshmukh2004@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon-wrapper"><i data-lucide="phone"></i></div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p><a href="tel:+919270836897">+91 9270836897</a> / <a href="tel:+919561563002">+91
+                                            9561563002</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon-wrapper"><i data-lucide="map-pin"></i></div>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>Pune, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-panel scroll-reveal fade-right">
+                        <form id="contact-form" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="form-name">Name</label>
+                                <input type="text" id="form-name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email</label>
+                                <input type="email" id="form-email" name="email" required
+                                    placeholder="john@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-subject">Subject</label>
+                                <input type="text" id="form-subject" name="subject" required
+                                    placeholder="Collaboration Opportunity">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-message">Message</label>
+                                <textarea id="form-message" name="message" rows="5" required
+                                    placeholder="Write your message here..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary form-btn">Send Message <i
+                                    data-lucide="send"></i></button>
+                            <div id="form-status" class="form-status hidden"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Sangram Deshmukh. Crafted with analytical precision.</p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/sangram-deshmukh-530b512aa" target="_blank" rel="noopener"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-linkedin">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect width="4" height="12" x="2" y="9"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg></a>
+                <a href="https://www.github.com/sangram654" target="_blank" rel="noopener"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-github">
+                        <path
+                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                        </path>
+                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                    </svg></a>
+                <a href="mailto:sangramdeshmukh2004@gmail.com"><i data-lucide="mail"></i></a>
+                <a href="tel:+919270836897"><i data-lucide="phone"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive AI Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbot-widget-id">
+        <button class="chatbot-toggle-btn" id="chatbot-toggle-btn-id" aria-label="Open AI Assistant">
+            <i data-lucide="message-square" class="chat-open-icon"></i>
+            <i data-lucide="x" class="chat-close-icon hidden"></i>
+            <span class="chat-pulse"></span>
+        </button>
+
+        <div class="chatbot-window hidden" id="chatbot-window-id">
+            <div class="chatbot-header">
+                <div class="chatbot-avatar">SD</div>
+                <div class="chatbot-header-text">
+                    <h4>Sangram Bot</h4>
+                    <span class="status-indicator"><span class="dot"></span> Online</span>
+                </div>
+            </div>
+
+            <div class="chatbot-messages" id="chatbot-messages-id">
+                <div class="message bot-message">
+                    Hi! I'm Sangram's virtual assistant. Ask me anything about his data analytics skills, work
+                    experience, projects, or education!
+                </div>
+            </div>
+
+            <div class="chatbot-suggestions" id="chatbot-suggestions-id">
+                <button class="suggestion-btn">What are his core skills?</button>
+                <button class="suggestion-btn">Tell me about his Sales Analytics Dashboard</button>
+                <button class="suggestion-btn">What is his work experience?</button>
+            </div>
+
+            <form class="chatbot-input-area" id="chatbot-form-id">
+                <input type="text" id="chatbot-input-id" autocomplete="off" placeholder="Ask about Sangram..."
+                    aria-label="Type message">
+                <button type="submit" class="chatbot-send-btn" aria-label="Send Message"><i
+                        data-lucide="send"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripting (Lucide Icons and Logic) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

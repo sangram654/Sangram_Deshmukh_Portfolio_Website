@@ -1,0 +1,20 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local submissions database
+contact_submissions.json
+
+# IDE config
+.vscode/
+.idea/
+.agents/
+.gemini/

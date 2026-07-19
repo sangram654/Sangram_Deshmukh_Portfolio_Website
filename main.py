@@ -7,7 +7,7 @@ from datetime import datetime
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
@@ -107,7 +107,7 @@ Sent via Portfolio FastAPI Backend
 
 # Contact Form API Endpoint
 @app.post("/api/contact")
-async def handle_contact(payload: ContactRequest):
+async def handle_contact(payload: ContactRequest, background_tasks: BackgroundTasks):
     try:
         submission_data = {
             "timestamp": datetime.utcnow().isoformat(),
@@ -128,9 +128,10 @@ async def handle_contact(payload: ContactRequest):
             save_submission(submission_data)
         except Exception as save_err:
             print(f"[SAVE WARNING] Could not save to local file (expected on Render): {save_err}")
-        
-        # Send email dispatch
-        send_email_notification(
+
+        # Send email in background so response is returned immediately
+        background_tasks.add_task(
+            send_email_notification,
             name=payload.name,
             email=payload.email,
             subject=payload.subject,

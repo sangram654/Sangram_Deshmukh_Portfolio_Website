@@ -166,8 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
         chatOpenIcon.classList.toggle('hidden');
         chatCloseIcon.classList.toggle('hidden');
         const pulse = chatbotToggleBtn.querySelector('.chat-pulse');
-        if(pulse) pulse.classList.toggle('hidden');
-        
+        if (pulse) pulse.classList.toggle('hidden');
+
         // Scroll to bottom when opening
         if (!chatbotWindow.classList.contains('hidden')) {
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
@@ -180,59 +180,59 @@ document.addEventListener('DOMContentLoaded', () => {
         skills: {
             keywords: ['skill', 'skills', 'know', 'tech', 'stack', 'languages', 'programming', 'tools', 'power bi', 'tableau', 'excel'],
             response: "Sangram's core skills include:<br>" +
-                      "• <strong>Data Analytics & Visualization:</strong> Power BI, Tableau, Excel & Advanced Excel, EDA, Statistics, Matplotlib, Seaborn.<br>" +
-                      "• <strong>ML & AI:</strong> Scikit-learn, XGBoost, TensorFlow, PyTorch, OpenCV, LangChain, LangGraph, RAG Pipelines, LLM APIs, Vector Databases, Time Series.<br>" +
-                      "• <strong>Programming:</strong> Python, SQL (MySQL, PostgreSQL), R, JavaScript, C++, DSA, OOP, System Design.<br>" +
-                      "• <strong>Data Engineering & Tools:</strong> ETL Pipelines, FastAPI, Streamlit, Docker, MongoDB, AWS, Django, Flask, n8n, Zapier."
+                "• <strong>Data Analytics & Visualization:</strong> Power BI, Tableau, Excel & Advanced Excel, EDA, Statistics, Matplotlib, Seaborn.<br>" +
+                "• <strong>ML & AI:</strong> Scikit-learn, XGBoost, TensorFlow, PyTorch, OpenCV, LangChain, LangGraph, RAG Pipelines, LLM APIs, Vector Databases, Time Series.<br>" +
+                "• <strong>Programming:</strong> Python, SQL (MySQL, PostgreSQL), R, JavaScript, C++, DSA, OOP, System Design.<br>" +
+                "• <strong>Data Engineering & Tools:</strong> ETL Pipelines, FastAPI, Streamlit, Docker, MongoDB, AWS, Django, Flask, n8n, Zapier."
         },
         experience: {
             keywords: ['experience', 'work', 'intern', 'internship', 'company', 'variant', 'sumago', 'job'],
             response: "Sangram has completed two valuable internships:<br><br>" +
-                      "1. <strong>Data Science Intern @ AI Variant</strong> (Remote, July 2025 – April 2026): Performed EDA on 500K+ row datasets, built Power BI KPI dashboards, automated ETL pipelines in Python & SQL, deployed Time Series Forecasting models, and developed autonomous AI agents on AWS.<br><br>" +
-                      "2. <strong>Data Science Intern @ Sumago Infotech</strong> (Onsite, Dec 2024 – Feb 2025): Constructed regression-based predictive models with complete data preprocessing, feature engineering, and performance evaluations."
+                "1. <strong>Data Science Intern @ AI Variant</strong> (Remote, July 2025 – April 2026): Performed EDA on 500K+ row datasets, built Power BI KPI dashboards, automated ETL pipelines in Python & SQL, deployed Time Series Forecasting models, and developed autonomous AI agents on AWS.<br><br>" +
+                "2. <strong>Data Science Intern @ Sumago Infotech</strong> (Onsite, Dec 2024 – Feb 2025): Constructed regression-based predictive models with complete data preprocessing, feature engineering, and performance evaluations."
         },
         projects: {
             keywords: ['project', 'projects', 'build', 'built', 'sales', 'segmentation', 'churn', 'forecasting', 'reporting', 'hr', 'attrition', 'rag', 'erp', 'automation', 'anomaly'],
             response: "Sangram has built high-impact projects in both AI/ML and Data Analytics:<br><br>" +
-                      "<strong>AI & Machine Learning:</strong><br>" +
-                      "• <strong>RAG Document Intelligence:</strong> Hybrid search with 87% answer relevance. Deployed via FastAPI & Docker.<br>" +
-                      "• <strong>Intelligent Workflow Automation:</strong> API-driven agentic pipelines saving 20+ hrs/month, with LLM structured outputs.<br>" +
-                      "• <strong>Real-Time Predictive Analytics:</strong> XGBoost & LSTM models detecting anomalies on live event streams with Kafka.<br>" +
-                      "• <strong>AI-Powered ERP:</strong> Facial attendance integration using face-api.js and ESP32 IoT.<br><br>" +
-                      "<strong>Data Analytics & BI:</strong><br>" +
-                      "• <strong>Real-Time Sales Dashboard:</strong> End-to-end pipeline with interactive Power BI & Streamlit dashboard, reducing reporting time by 40%.<br>" +
-                      "• <strong>Customer Segmentation & Churn:</strong> K-Means clustering and churn models on 200K+ customer records.<br>" +
-                      "• <strong>Demand Forecasting Pipeline:</strong> ETL pipeline with ARIMA & XGBoost for time-series forecasting and structured Excel reports.<br>" +
-                      "• <strong>HR Attrition Analytics:</strong> Statistical hypothesis testing and Tableau dashboard, reducing reporting effort by 30%."
+                "<strong>AI & Machine Learning:</strong><br>" +
+                "• <strong>RAG Document Intelligence:</strong> Hybrid search with 87% answer relevance. Deployed via FastAPI & Docker.<br>" +
+                "• <strong>Intelligent Workflow Automation:</strong> API-driven agentic pipelines saving 20+ hrs/month, with LLM structured outputs.<br>" +
+                "• <strong>Real-Time Predictive Analytics:</strong> XGBoost & LSTM models detecting anomalies on live event streams with Kafka.<br>" +
+                "• <strong>AI-Powered ERP:</strong> Facial attendance integration using face-api.js and ESP32 IoT.<br><br>" +
+                "<strong>Data Analytics & BI:</strong><br>" +
+                "• <strong>Real-Time Sales Dashboard:</strong> End-to-end pipeline with interactive Power BI & Streamlit dashboard, reducing reporting time by 40%.<br>" +
+                "• <strong>Customer Segmentation & Churn:</strong> K-Means clustering and churn models on 200K+ customer records.<br>" +
+                "• <strong>Demand Forecasting Pipeline:</strong> ETL pipeline with ARIMA & XGBoost for time-series forecasting and structured Excel reports.<br>" +
+                "• <strong>HR Attrition Analytics:</strong> Statistical hypothesis testing and Tableau dashboard, reducing reporting effort by 30%."
         },
         education: {
             keywords: ['education', 'college', 'degree', 'study', 'cgpa', 'school', 'marks', 'percentage', 'hsc', 'ssc'],
             response: "Sangram's educational details are:<br>" +
-                      "• <strong>B.E. in Artificial Intelligence & Machine Learning</strong> from Samarth College of Engineering & Management, Belhe, Pune (CGPA: <strong>8.64</strong>, Graduating June 2026).<br>" +
-                      "• <strong>HSC</strong> from Dada Patil Mahavidyalaya, Karjat (Percentage: <strong>65%</strong>, 2022).<br>" +
-                      "• <strong>SSC</strong> from Mahatma Gandhi Vidyalaya, Karjat (Percentage: <strong>88%</strong>, 2020)."
+                "• <strong>B.E. in Artificial Intelligence & Machine Learning</strong> from Samarth College of Engineering & Management, Belhe, Pune (CGPA: <strong>8.64</strong>, Graduating June 2026).<br>" +
+                "• <strong>HSC</strong> from Dada Patil Mahavidyalaya, Karjat (Percentage: <strong>65%</strong>, 2022).<br>" +
+                "• <strong>SSC</strong> from Mahatma Gandhi Vidyalaya, Karjat (Percentage: <strong>88%</strong>, 2020)."
         },
         contact: {
             keywords: ['contact', 'email', 'phone', 'number', 'address', 'location', 'reach', 'hire', 'github', 'linkedin'],
             response: "You can reach out to Sangram through:<br>" +
-                      "• <strong>LinkedIn:</strong> <a href='https://www.linkedin.com/in/sangram-deshmukh-530b512aa' target='_blank'>linkedin.com/in/sangram-deshmukh-530b512aa</a><br>" +
-                      "• <strong>Email:</strong> <a href='mailto:sangramdeshmukh2004@gmail.com'>sangramdeshmukh2004@gmail.com</a><br>" +
-                      "• <strong>Phone:</strong> <a href='tel:+919270836897'>+91 9270836897</a> / <a href='tel:+919561563002'>+91 9561563002</a><br>" +
-                      "• <strong>Location:</strong> Pune, India<br>" +
-                      "• <strong>GitHub:</strong> <a href='https://www.github.com/sangram654' target='_blank'>github.com/sangram654</a>"
+                "• <strong>LinkedIn:</strong> <a href='https://www.linkedin.com/in/sangram-deshmukh-530b512aa' target='_blank'>linkedin.com/in/sangram-deshmukh-530b512aa</a><br>" +
+                "• <strong>Email:</strong> <a href='mailto:sangramdeshmukh2004@gmail.com'>sangramdeshmukh2004@gmail.com</a><br>" +
+                "• <strong>Phone:</strong> <a href='tel:+919270836897'>+91 9270836897</a> / <a href='tel:+919561563002'>+91 9561563002</a><br>" +
+                "• <strong>Location:</strong> Pune, India<br>" +
+                "• <strong>GitHub:</strong> <a href='https://www.github.com/sangram654' target='_blank'>github.com/sangram654</a>"
         },
         awards: {
             keywords: ['award', 'awards', 'achievement', 'achievements', 'topper', 'prize', 'competition', 'certifications', 'certification'],
             response: "Sangram has earned several notable recognitions:<br>" +
-                      "• <strong>Academic Topper:</strong> Ranked #1 topper student in the AI & ML Dept (Academic Year 2024-25).<br>" +
-                      "• <strong>1st Prize:</strong> Won inter-campus General Knowledge Competition.<br>" +
-                      "• <strong>Certifications:</strong> Udemy Power BI Data Analysis, Flipkart Grid 6.0 Tech Quiz Hackathon participant."
+                "• <strong>Academic Topper:</strong> Ranked #1 topper student in the AI & ML Dept (Academic Year 2024-25).<br>" +
+                "• <strong>1st Prize:</strong> Won inter-campus General Knowledge Competition.<br>" +
+                "• <strong>Certifications:</strong> Udemy Power BI Data Analysis, Flipkart Grid 6.0 Tech Quiz Hackathon participant."
         },
         hobbies: {
             keywords: ['hobby', 'hobbies', 'chess', 'music', 'interest', 'interests'],
             response: "Sangram's hobbies include:<br>" +
-                      "• <strong>Chess:</strong> Enjoy playing chess as a leisure activity; it helps him unwind while keeping his mind sharp and focused.<br>" +
-                      "• <strong>Music:</strong> Listening to music across various genres to relax and recharge during breaks."
+                "• <strong>Chess:</strong> Enjoy playing chess as a leisure activity; it helps him unwind while keeping his mind sharp and focused.<br>" +
+                "• <strong>Music:</strong> Listening to music across various genres to relax and recharge during breaks."
         },
         about: {
             keywords: ['about', 'who are you', 'hello', 'hi', 'hey', 'summary'],
@@ -283,8 +283,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = await response.json();
             if (result.status === 'success') {
                 typingIndicator.remove();
-                appendMessage('bot', result.reply);
+                // ENGLISH ONLY enforcement for the real-time response as well
+                const reply = (result.reply || '').toString();
+                appendMessage('bot', reply);
                 return;
+
             } else {
                 throw new Error(result.reply || "API response status was not successful.");
             }
@@ -292,31 +295,52 @@ document.addEventListener('DOMContentLoaded', () => {
             console.warn("Real-time chatbot API failed, falling back to local static brain:", err);
         }
 
-        // Local Fallback Keyword Brain Logic
+        // Local Fallback Keyword Brain Logic (ENGLISH ONLY)
         let foundResponse = null;
-        for (const category in resumeData) {
-            const data = resumeData[category];
-            const isMatch = data.keywords.some(kw => query.includes(kw));
-            if (isMatch) {
-                foundResponse = data.response;
-                break;
-            }
-        }
 
-        if (!foundResponse) {
-            foundResponse = "I couldn't quite find details matching that query. You can ask me about:<br>" +
-                            "• His <strong>skills</strong> (Power BI, SQL, Python, Tableau)<br>" +
-                            "• His professional <strong>experience</strong><br>" +
-                            "• His analytics <strong>projects</strong> (Sales Dashboard, HR Analytics)<br>" +
-                            "• His <strong>education</strong> details<br>" +
-                            "• How to <strong>contact</strong> him or view his LinkedIn";
+        // 1) Detect portfolio intent
+        const portfolioIntentKeywords = [
+            // skills/projects/experience/education/contact
+            'skill', 'skills', 'tech', 'stack', 'tools',
+            'project', 'projects', 'rag', 'erp', 'automation', 'forecast', 'forecasting', 'dashboard',
+            'experience', 'work', 'intern', 'internship', 'company',
+            'education', 'degree', 'cgpa', 'college', 'school', 'marks', 'percentage',
+            'contact', 'email', 'phone', 'linkedin', 'github', 'location',
+            // achievements & hobbies
+            'award', 'awards', 'achievement', 'topper', 'certification', 'certifications',
+            'hobby', 'hobbies', 'chess', 'music'
+        ];
+
+        const isPortfolioQuery = portfolioIntentKeywords.some(kw => query.includes(kw));
+
+        // 2) If portfolio query: match categories
+        if (isPortfolioQuery) {
+            for (const category in resumeData) {
+                const data = resumeData[category];
+                const isMatch = data.keywords.some(kw => query.includes(kw));
+                if (isMatch) {
+                    foundResponse = data.response;
+                    break;
+                }
+            }
+
+            if (!foundResponse) {
+                foundResponse = "I couldn't find exact details for that question in Sangram's profile. " +
+                    "Ask about his <strong>skills</strong>, <strong>projects</strong>, <strong>internships</strong>, " +
+                    "<strong>education</strong>, or <strong>contact</strong> info.";
+            }
+        } else {
+            // 3) World/general questions: safe high-level response
+            // (We don't browse the internet, so we answer generally and avoid guessing.)
+            foundResponse = "I can help with Sangram's portfolio questions. " +
+                "For general world questions, I don't have live browsing data here—please check a reliable source like official websites or trusted news, and I can still explain the concept at a high level if you ask.";
         }
 
         // Simulate a slight thinking delay for local fallback
         setTimeout(() => {
             typingIndicator.remove();
             appendMessage('bot', foundResponse);
-        }, 500);
+        }, 300);
     }
 
     chatbotForm.addEventListener('submit', (e) => {
@@ -339,7 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const submitBtn = contactForm.querySelector('.form-btn');
             const originalText = submitBtn.innerHTML;
-            
+
             // Get form values
             const name = document.getElementById('form-name').value;
             const email = document.getElementById('form-email').value;
@@ -349,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Visual loading feedback
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Sending... <span class="pulse-dot"></span>';
-            
+
             try {
                 const response = await fetch('/api/contact', {
                     method: 'POST',
@@ -377,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error("Submission error:", err);
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
-                
+
                 // Show error status
                 formStatus.textContent = "Oops! Something went wrong. Please check your inputs and try again.";
                 formStatus.className = "form-status error";

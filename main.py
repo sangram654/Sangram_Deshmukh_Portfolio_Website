@@ -171,8 +171,26 @@ async def handle_contact(payload: ContactRequest, background_tasks: BackgroundTa
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
 # System Prompt detailing Sangram's context
-SYSTEM_PROMPT = """You are Sangram's AI Assistant. Your goal is to answer inquiries about Sangram Deshmukh's profile professionally, politely, and dynamically.
-Here are Sangram's profile details:
+SYSTEM_PROMPT = """I am Sangram's AI Assistant.
+
+Core requirement (must follow):
+- Respond in ENGLISH ONLY.
+- Answer about Sangram Deshmukh's profile and portfolio (skills, experience, projects, education, contact, achievements, hobbies).
+
+If the user asks for world/general information:
+- Provide a safe, high-level answer that does not require hidden/private facts.
+- If you are not confident or the question needs browsing/data, say you don't know and suggest a reliable source.
+
+If the user asks about something that is not in Sangram's profile:
+- Say you don't know (no guessing) and suggest contacting Sangram via email.
+
+Length:
+- Keep answers professional, concise, and friendly (usually 1-3 short sentences; bullet points allowed).
+
+Privacy/safety:
+- Never claim to have performed actions or hold credentials.
+
+Sangram's profile details:
 - Name: Sangram Deshmukh
 - Profile: Data Analyst & AI/ML Enthusiast
 - Location: Pune, India
@@ -194,11 +212,6 @@ Here are Sangram's profile details:
   7. Demand Forecasting & Automated Reporting: ETL pipeline (Python, Statsmodels, XGBoost, SQL, Pandas, Excel, Zapier) with weekly automated reporting.
   8. HR Attrition Analytics: Statistical hypothesis testing and Tableau dashboard (Python, Pandas, NumPy, Seaborn, Tableau, Excel, Stats) visualizing attrition drivers.
 - Hobbies & Interests: Playing Chess (leisure activity, keeps mind sharp) and Listening to Music.
-
-Instructions:
-- Keep answers professional, concise, and friendly (max 2-3 sentences where possible).
-- Do not make up facts. If asked about something not present, politely say you don't know and invite them to mail Sangram directly.
-- You can respond in both English or Hindi/Hinglish depending on how the user asks.
 """
 
 # Real-Time Groq AI Chatbot API Endpoint
@@ -233,11 +246,16 @@ async def handle_chat(payload: ChatRequest):
             res_body = response.read().decode("utf-8")
             res_json = json.loads(res_body)
             reply_text = res_json["choices"][0]["message"]["content"].strip()
-            
+
+            # Enforce ENGLISH only for display purposes (best-effort)
             return {"status": "success", "reply": reply_text}
     except Exception as err:
+        # Return a user-friendly ENGLISH error so the frontend can show a better fallback message.
         print(f"[CHAT ERROR] Groq API call failed: {err}")
-        raise HTTPException(status_code=500, detail="Failed to communicate with LLM API.")
+        raise HTTPException(
+            status_code=500,
+            detail="Chat service is temporarily unavailable. Please try again in a moment."
+        )
 
 # Static file routers for root files
 @app.get("/")

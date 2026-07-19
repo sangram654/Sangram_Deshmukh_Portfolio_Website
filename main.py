@@ -1,7 +1,9 @@
 import json
 import os
 import smtplib
+import ssl
 import urllib.request
+import urllib.error
 import urllib.parse
 from datetime import datetime
 from email.mime.text import MIMEText
@@ -55,26 +57,12 @@ def save_submission(data: dict):
     with open(SUBMISSIONS_FILE, "w", encoding="utf-8") as f:
         json.dump(submissions, f, indent=4, ensure_ascii=False)
 
-# Helper to send email notification
+# Helper to send email via Resend HTTP API (works on Render - no SMTP ports needed)
 def send_email_notification(name: str, email: str, subject: str, message: str):
-    smtp_user = os.environ.get("EMAIL_USER")
-    smtp_password = os.environ.get("EMAIL_PASS")
-    receiver_email = os.environ.get("SMTP_RECEIVER", "sangramdeshmukh2004@gmail.com")
+    receiver_email = "sangramdeshmukh2004@gmail.com"
+    resend_api_key = os.environ.get("RESEND_API_KEY")
 
-    if not smtp_user or not smtp_password:
-        print("[EMAIL WARNING] EMAIL_USER or EMAIL_PASS variables not set in .env. Skipping email dispatch.")
-        return False
-
-    # Normalize Gmail App Password (strip spaces)
-    smtp_password = smtp_password.replace(" ", "")
-
-    try:
-        msg = MIMEMultipart()
-        msg["From"] = smtp_user
-        msg["To"] = receiver_email
-        msg["Subject"] = f"[Portfolio Contact] {subject}"
-
-        body = f"""Hello Sangram,
+    body_text = f"""Hello Sangram,
 
 You have received a new message from your portfolio contact form:
 
@@ -88,22 +76,60 @@ Message:
 {message}
 
 --------------------------------------------------
-Sent via Portfolio FastAPI Backend
+Sent via Sangram Deshmukh Portfolio Website
 """
-        msg.attach(MIMEText(body, "plain"))
 
-        # Connect to Gmail SMTP
-        server = smtplib.SMTP("smtp.gmail.com", 587)
-        server.starttls()
-        server.login(smtp_user, smtp_password)
-        server.sendmail(smtp_user, receiver_email, msg.as_string())
-        server.quit()
-        
-        print(f"[EMAIL SUCCESS] Notification email successfully sent to {receiver_email}.")
-        return True
-    except Exception as err:
-        print(f"[EMAIL ERROR] Failed to send email: {err}")
-        return False
+    # Primary: Resend API (HTTPS - always works on Render)
+    if resend_api_key:
+        try:
+            url = "https://api.resend.com/emails"
+            headers = {
+                "Authorization": f"Bearer {resend_api_key}",
+                "Content-Type": "application/json"
+            }
+            data = {
+                "from": "Portfolio Contact <onboarding@resend.dev>",
+                "to": [receiver_email],
+                "subject": f"[Portfolio Contact] {subject}",
+                "text": body_text
+            }
+            req = urllib.request.Request(
+                url,
+                data=json.dumps(data).encode("utf-8"),
+                headers=headers,
+                method="POST"
+            )
+            with urllib.request.urlopen(req, timeout=10) as response:
+                print(f"[EMAIL SUCCESS] Sent via Resend API to {receiver_email}.")
+                return True
+        except Exception as err:
+            print(f"[EMAIL ERROR] Resend API failed: {err}. Trying Gmail SMTP fallback...")
+
+    # Fallback: Gmail SMTP (port 465 SSL)
+    smtp_user = os.environ.get("EMAIL_USER")
+    smtp_password = os.environ.get("EMAIL_PASS")
+    if smtp_user and smtp_password:
+        smtp_password = smtp_password.replace(" ", "")
+        try:
+            from email.mime.text import MIMEText
+            from email.mime.multipart import MIMEMultipart
+            msg = MIMEMultipart()
+            msg["From"] = smtp_user
+            msg["To"] = receiver_email
+            msg["Subject"] = f"[Portfolio Contact] {subject}"
+            msg.attach(MIMEText(body_text, "plain"))
+            context = ssl.create_default_context()
+            with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context, timeout=10) as server:
+                server.login(smtp_user, smtp_password)
+                server.sendmail(smtp_user, receiver_email, msg.as_string())
+            print(f"[EMAIL SUCCESS] Sent via Gmail SMTP SSL to {receiver_email}.")
+            return True
+        except Exception as err:
+            print(f"[EMAIL ERROR] Gmail SMTP fallback also failed: {err}")
+            return False
+
+    print("[EMAIL WARNING] No email credentials configured. Submission logged only.")
+    return False
 
 # Contact Form API Endpoint
 @app.post("/api/contact")

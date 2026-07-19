@@ -117,14 +117,17 @@ async def handle_contact(payload: ContactRequest):
             "message": payload.message
         }
         
-        # Save locally
-        save_submission(submission_data)
-        
-        # Print to console logs
+        # Print to console logs (always works on Render)
         print(f"\n[NEW CONTACT FORM SUBMISSION] at {submission_data['timestamp']}")
         print(f"From: {payload.name} ({payload.email})")
         print(f"Subject: {payload.subject}")
         print(f"Message: {payload.message}\n")
+
+        # Try to save locally (may fail on Render read-only filesystem — safe to skip)
+        try:
+            save_submission(submission_data)
+        except Exception as save_err:
+            print(f"[SAVE WARNING] Could not save to local file (expected on Render): {save_err}")
         
         # Send email dispatch
         send_email_notification(

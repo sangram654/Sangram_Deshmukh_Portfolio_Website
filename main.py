@@ -85,7 +85,8 @@ Sent via Sangram Deshmukh Portfolio Website
             url = "https://api.resend.com/emails"
             headers = {
                 "Authorization": f"Bearer {resend_api_key}",
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "User-Agent": "python-requests/2.31.0"
             }
             data = {
                 "from": "Portfolio Contact <onboarding@resend.dev>",
